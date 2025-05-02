@@ -1,7 +1,10 @@
 
-
 # Python ile yazılım geliştirme konularında sıkça sorulan sorular ve yanıtları
 # Bu program, kullanıcıdan gelen sorulara yanıt vermek için basit bir sözlük yapısı kullanır.
+
+from sentence_transformers import SentenceTransformer
+from sklearn.neighbors import NearestNeighbors
+import numpy as np
 
 qa_data = [
     {
@@ -136,6 +139,13 @@ qa_data = [
     }
 ]
 
+sorular = [item["question"] for item in qa_data]
+cevaplar = [item["answer"] for item in qa_data]
+
+model = SentenceTransformer('all-MiniLM-L6-v2')
+soru_embeddings = model.encode(sorular)
+nn = NearestNeighbors(n_neighbors=1, metric='cosine')
+nn.fit(soru_embeddings)
 
 
 def get_answer(question):
@@ -150,6 +160,18 @@ while True:
     if user_input.lower() == 'exit':
         print("Çıkılıyor...")
         break
-    answer = get_answer(user_input)
+
+    input_embedding = model.encode([user_input])
+
+    distance, index = nn.kneighbors(input_embedding)
+    similarity = 1 - distance[0][0]
+
+    if similarity > 0.7:
+        answer = cevaplar[index[0][0]]
+    else:
+        answer = "Bu soruyu anlayamadım veya veri setimde yok."
+
     print("Cevap:", answer)
+
+
 
