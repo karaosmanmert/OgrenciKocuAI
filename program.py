@@ -7,6 +7,7 @@ from sklearn.neighbors import NearestNeighbors
 import numpy as np
 
 qa_data = [
+
     {
         "question": "Git nedir?",
         "answer": "Git, yazılım projelerinde değişiklikleri takip etmek için kullanılan dağıtık bir versiyon kontrol sistemidir.",
@@ -136,8 +137,144 @@ qa_data = [
         "question": "Python'da test nasıl yazılır?",
         "answer": "`assert` ifadeleri veya `unittest`, `pytest` gibi kütüphanelerle test yazılabilir.",
         "category": "Test Araçları"
+    },
+    {
+        "question": "Algoritma Nedir?",
+        "answer": "Belirli bir problemi çözmek veya belirli bir görevi yerine getirmek için kullanılan, adım adım ilerleyen bir talimatlar dizisidir.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "Belirginlik nedir?",
+        "answer": "Algoritmanın her adımının açık ve net bir şekilde tanımlanmasıdır. Her adımın ne yapacağı ve nasıl yapılacağı belirgin olmalıdır.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "Sonluluk nedir?",
+        "answer": "Algoritmanın belirli bir sayıda adımda sonlanmasıdır. Algoritma sonsuz döngüye girmemelidir.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "Etkinlik nedir?",
+        "answer": "Algoritmanın belirli bir problemi çözme süresinin mümkün olan en kısa sürede tamamlanmasıdır. Algoritmanın gereksiz adımlar içermemesi gerekir.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "Algoritmanın önemi nedir?",
+        "answer": "Algoritmalar, yazılım geliştirme sürecinde problemleri çözmek için sistematik bir yaklaşım sağlar. Doğru algoritmalar, yazılımın performansını ve verimliliğini artırır.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "Bir algoritma örneği verin.",
+        "answer": "Bir sıralama algoritması örneği olarak 'Bubble Sort' algoritması verilebilir. Bu algoritma, bir dizi sayıyı sıralamak için ardışık karşılaştırmalar yapar.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "Bubble Sort algoritması nedir?",
+        "answer": "Bubble Sort, ardışık elemanları karşılaştırarak ve gerektiğinde takas yaparak bir diziyi sıralayan basit bir sıralama algoritmasıdır.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "Algoritma nedir?",
+        "answer": "Algoritma, belirli bir problemi çözmek veya belirli bir görevi yerine getirmek için kullanılan, adım adım ilerleyen talimatlar dizisidir.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "İki sayıyı çarpma işlemi kullanmadan çarpan algoritma nasıldır?",
+        "answer": "Bu algoritma, ikinci çarpan kadar birinci çarpanı toplar. Örneğin, 4 ile 5'i çarpmak için 4 sayısı 5 kez toplanır.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "İki sayıyı bölme işlemi kullanmadan bölen algoritma nasıldır?",
+        "answer": "Bu algoritma, bölünen sayıdan böleni tekrar tekrar çıkararak kaç kez çıkarıldığını sayar; bu sayı bölüm değeridir.",
+        "category": "Algoritma"
+    },
+    {
+        "question": "SDLC nedir?",
+        "answer": "SDLC (Software Development Life Cycle), bir yazılımın planlanmasından bakımına kadar geçen süreci tanımlayan sistematik bir yaklaşımdır.",
+        "category": "SDLC"
+    },
+    {
+        "question": "SDLC'nin amaçları nelerdir?",
+        "answer": "SDLC'nin temel amaçları, yazılım projelerine standart bir süreç sunmak, hataları azaltmak, kullanıcı gereksinimlerini karşılamak ve projeyi zamanında tamamlamaktır.",
+        "category": "SDLC"
+    },
+    {
+        "question": "Planlama aşamasında ne yapılır?",
+        "answer": "Projenin neden yapılacağı belirlenir, hedef kitle analiz edilir, risk analizi yapılır ve proje planı hazırlanır.",
+        "category": "SDLC"
+    },
+    {
+        "question": "Gereksinim analizi aşamasının amacı nedir?",
+        "answer": "Yazılımın ne yapması gerektiğini belirlemek, kullanıcı ve sistem gereksinimlerini dokümante etmektir.",
+        "category": "SDLC"
+    },
+    {
+        "question": "Tasarım aşamasında neler yapılır?",
+        "answer": "Sistem mimarisi belirlenir, UI/UX tasarımı yapılır, veri tabanı yapısı ve yazılım bileşenleri planlanır.",
+        "category": "SDLC"
+    },
+    {
+        "question": "Şelale modeli nedir?",
+        "answer": "Şelale modeli, SDLC'de adımların sıralı ve geri dönüşsüz şekilde izlendiği klasik bir yazılım geliştirme modelidir.",
+        "category": "SDLC Modeli"
+    },
+    {
+        "question": "Çevik modelin avantajları nelerdir?",
+        "answer": "Agile modelde kullanıcı geri bildirimi alınır, değişikliklere hızlı adapte olunur ve erken çalışan yazılım teslimi mümkündür.",
+        "category": "SDLC Modeli"
+    },
+    {
+        "question": "Git nedir?",
+        "answer": "Git, dağıtık yapıda çalışan açık kaynaklı bir versiyon kontrol sistemidir. Geliştiricilerin projeler üzerindeki değişiklikleri takip etmesini sağlar.",
+        "category": "Versiyon Kontrol"
+    },
+    {
+        "question": "GitHub nedir?",
+        "answer": "GitHub, Git tabanlı projelerin barındırılması, paylaşılması ve iş birliği yapılması için kullanılan bir platformdur.",
+        "category": "Versiyon Kontrol"
+    },
+    {
+        "question": "Versiyon kontrol sistemine neden ihtiyaç duyarız?",
+        "answer": "Kod değişikliklerini takip etmek, ekip içi iş birliğini sağlamak, veri kaybını önlemek ve eski sürümlere dönmek gibi ihtiyaçlar nedeniyle versiyon kontrol sistemlerine ihtiyaç duyulur.",
+        "category": "Versiyon Kontrol"
+    },
+    {
+        "question": "Git’in tarihçesi nedir?",
+        "answer": "Git, 2005 yılında Linus Torvalds tarafından, Linux çekirdeğini yönetmek için geliştirilmiştir. Daha önce kullanılan BitKeeper yazılımının eksiklerini gidermek amacıyla oluşturulmuştur.",
+        "category": "Versiyon Kontrol"
+    },
+    {
+        "question": "Git’in temel özellikleri nelerdir?",
+        "answer": "Git hızlıdır, dağıtık bir yapıya sahiptir, dallanma (branching) sistemini destekler ve açık kaynaklıdır.",
+        "category": "Versiyon Kontrol"
+    },
+    {
+        "question": "Merkezi ve dağıtık versiyon kontrol sistemleri arasındaki fark nedir?",
+        "answer": "Merkezi sistemlerde tüm değişiklikler tek bir sunucuda tutulur, dağıtık sistemlerde ise her geliştirici proje geçmişinin bir kopyasını kendi bilgisayarında tutar.",
+        "category": "Versiyon Kontrol"
+    },
+    {
+        "question": "Git ve GitHub arasındaki fark nedir?",
+        "answer": "Git bir versiyon kontrol sistemidir, GitHub ise Git depolarının çevrim içi olarak barındırılmasını ve paylaşılmasını sağlayan bir platformdur.",
+        "category": "Versiyon Kontrol"
+    },
+    {
+        "question": "GitHub üzerinde Pull Request (PR) nedir?",
+        "answer": "Pull Request, bir projede yapılan değişiklikleri incelemek ve ana dala dahil edilmesini istemek için kullanılan GitHub özelliğidir.",
+        "category": "Versiyon Kontrol"
+    },
+    {
+        "question": "GitHub Actions nedir?",
+        "answer": "GitHub Actions, yazılım projelerinde otomatikleştirilmiş işlemler oluşturmak için kullanılan bir CI/CD aracıdır.",
+        "category": "Versiyon Kontrol"
+    },
+    {
+        "question": "Git branching (dallanma) ne işe yarar?",
+        "answer": "Git branching, geliştiricilerin projede bağımsız özellikler veya düzeltmeler üzerinde paralel olarak çalışabilmesini sağlar.",
+        "category": "Versiyon Kontrol"
     }
 ]
+
 
 sorular = [item["question"] for item in qa_data]
 cevaplar = [item["answer"] for item in qa_data]
