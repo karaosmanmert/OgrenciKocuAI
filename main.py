@@ -4,6 +4,9 @@
 
 from sentence_transformers import SentenceTransformer
 from sklearn.neighbors import NearestNeighbors
+import webbrowser
+
+webbrowser.open("https://github.com/karaosmanmert/OgrenciKocuAI")
 
 qa_data_cleaned = [
     {
