@@ -1,39 +1,33 @@
-Kullanıcıdan alınan sorular, önceden tanımlanmış bir veri kümesindeki sorularla karşılaştırılır.
-Anlamca en benzer soru bulunur ve o soruya ait cevap kullanıcıya gösterilir.
+Embedding Tabanlı Soru-Cevap Botu
 
-Proje Özellikleri:
-- Sorular ve cevaplar Python sözlüğü (list of dictionaries) yapısında tanımlanmıştır.
-- Kullanıcıdan gelen soru, embedding yöntemi ile sayısal vektöre çevrilir.
-- Veritabanındaki soruların embedding'leri ile karşılaştırma yapılır.
-- Cosine benzerliği esas alınarak en yakın soru belirlenir.
-- %70 ve üzeri benzerlik varsa ilgili cevap gösterilir, aksi halde anlaşılmadığı bilgisi verilir.
+Bu proje, öğrencilere kısa ve öz yanıtlar veren bir soru-cevap asistanıdır. 
+Uygulama, kullanıcının sorduğu sorularla Airtable veritabanındaki kayıtları karşılaştırır. 
+Benzer bir soru bulunamazsa, OpenAI API kullanılarak yeni bir yanıt oluşturulur ve veritabanına kaydedilir.
 
-Kullanılan Kütüphaneler:
-- sentence-transformers: metinleri sayısal embedding'e çevirmek için kullanılır.
-- scikit-learn: en yakın komşuyu (NearestNeighbors) bulmak için kullanılır.
+Dosyalar:
+
+- main.py: OpenAI API kullanarak çalışır. Gerekirse yeni cevap üretir.
+- main2.py: Sadece Airtable'daki mevcut verilerle çalışır.
+- .env: API anahtarlarının güvenli saklanması için kullanılır.
+- requirements.txt: Proje için gerekli Python kütüphanelerini içerir.
 
 Kurulum:
-1. Python 3 yüklü olmalıdır.
-2. Gerekli kütüphaneleri yükleyin:
-   pip install sentence-transformers scikit-learn
 
-3. script'i çalıştırın:
-   python bot.py
+1. Python 3.8 veya üzeri kurulu olmalıdır.
+2. Gerekli paketler aşağıdaki komutla yüklenebilir:
+   pip install -r requirements.txt
+3. Aynı klasöre bir .env dosyası ekleyin ve aşağıdaki bilgileri doldurun:
+
+   AIRTABLE_API_KEY=airtable_api_key
+   AIRTABLE_BASE_ID=airtable_base_id
+   AIRTABLE_TABLE_NAME=Table 1
+   OPENAI_API_KEY=openai_api_key   (sadece main.py için gereklidir)
 
 Kullanım:
-- Program çalıştığında kullanıcıya "Soru:" yazısıyla giriş istenir.
-- Kullanıcı metin olarak bir soru yazar.
-- Bot anlamlı bir eşleşme bulursa cevabı gösterir.
-- Çıkmak için 'exit' yazılması yeterlidir.
 
-Veri Yapısı:
-Veri seti Python içinde qa_data_cleaned isminde bir değişkende tutulur.
-Her bir öğe aşağıdaki formatta yazılmıştır:
+- OpenAI destekli tam sürüm için: python main.py
+- Sadece mevcut verilerle çalışmak için: python main2.py
 
-{
-    "question": "Soru metni",
-    "answer": "Cevap metni",
-    "category": "Kategori"
-}
+Not:
 
-Sistem temel düzeyde metin benzerliği üzerine kuruludur.
+- .env dosyasını kimseyle paylaşmayın ve GitHub'a yüklemeyin.
