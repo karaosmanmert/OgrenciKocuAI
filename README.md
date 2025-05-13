@@ -18,10 +18,10 @@ Kurulum:
    pip install -r requirements.txt
 3. Aynı klasöre bir .env dosyası ekleyin ve aşağıdaki bilgileri doldurun:
 
-   AIRTABLE_API_KEY=airtable_api_key
-   AIRTABLE_BASE_ID=airtable_base_id
-   AIRTABLE_TABLE_NAME=Table 1
-   OPENAI_API_KEY=openai_api_key   (sadece main.py için gereklidir)
+AIRTABLE_API_KEY=airtable_api_key
+AIRTABLE_BASE_ID=airtable_base_id
+AIRTABLE_TABLE_NAME=Table 1
+OPENAI_API_KEY=openai_api_key   (sadece main.py için gereklidir)
 
 Kullanım:
 
