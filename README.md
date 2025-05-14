@@ -6,8 +6,13 @@ Benzer bir soru bulunamazsa, OpenAI API kullanılarak yeni bir yanıt oluşturul
 
 Dosyalar:
 
-- main.py: OpenAI API kullanarak çalışır. Gerekirse yeni cevap üretir.
-- main2.py: Sadece Airtable'daki mevcut verilerle çalışır.
+- Airtable üzerinden soru-cevap verilerini alır.
+- Verilere ait eksik embedding'leri otomatik olarak üretir.
+- Öğrenci sorusunu alır, mevcut verilerle benzerliğe göre eşleştirir.
+- Benzer soru bulunamazsa (ve soru yazılım ile ilgiliyse) alternatif çözümler değerlendirilebilir.
+- Yazılım dışı sorular filtrelenir ve maliyet önlenir.
+- SentenceTransformers (`all-MiniLM-L6-v2`) modeli ile yerel embedding üretimi yapılır.
+- Ek API çağrısı gerektirmeyen konu filtresi içerir.
 - .env: API anahtarlarının güvenli saklanması için kullanılır.
 - requirements.txt: Proje için gerekli Python kütüphanelerini içerir.
 

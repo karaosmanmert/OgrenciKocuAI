@@ -12,7 +12,7 @@ import re
 # Ortam değişkenlerini yükle
 load_dotenv()
 
-webbrowser.open("https://github.com/karaosmanmert/OgrenciKocuAI")
+## webbrowser.open("https://github.com/karaosmanmert/OgrenciKocuAI")
 
 # API anahtarları
 AIRTABLE_API_KEY = os.getenv("AIRTABLE_API_KEY")
